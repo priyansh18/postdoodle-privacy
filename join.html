@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join a Postdoodle room</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:480px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1D1B2E;background:#FFF6E5;text-align:center}.code{font-size:44px;font-weight:700;letter-spacing:8px;background:#FFC83D;border:2px solid #1D1B2E;border-radius:16px;padding:16px;margin:24px 0}.btn{display:block;background:#1D1B2E;color:#FFF6E5;text-decoration:none;padding:16px;border-radius:999px;font-weight:600;margin:12px 0}.alt{background:#fff;color:#1D1B2E;border:2px solid #1D1B2E}p{color:rgba(29,27,46,.7)}</style>
+</head>
+<body>
+<h1>Postdoodle</h1>
+<p>Someone made a private room for the two of you. One code, no sign-up.</p>
+<div class="code" id="code">......</div>
+<a class="btn" id="open" href="#">Open in Postdoodle</a>
+<a class="btn alt" id="play" href="https://play.google.com/store/apps/details?id=com.priyansh.postdoodle">Get it on Google Play</a>
+<p>Already have the app? Open it and enter the code above.</p>
+<p style="font-size:13px"><a href="index.html">Privacy policy</a></p>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search).get('code')||'';
+  var code=q.toUpperCase().replace(/[^A-HJ-NP-Z2-9]/g,'').slice(0,6);
+  if(code.length===6){
+    document.getElementById('code').textContent=code;
+    document.getElementById('open').href='intent://join/'+code+'#Intent;scheme=postdoodle;package=com.priyansh.postdoodle;S.browser_fallback_url='+encodeURIComponent('https://play.google.com/store/apps/details?id=com.priyansh.postdoodle')+';end';
+  } else {
+    document.getElementById('open').style.display='none';
+  }
+})();
+</script>
+</body>
+</html>
