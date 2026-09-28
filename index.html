@@ -19,9 +19,9 @@
 <li><strong>Display name and language.</strong> The name you type (up to 24 characters) is shown to your partner. Your language choice (English or Hinglish) is stored with it.</li>
 <li><strong>Room and rounds.</strong> Your room code, the doodles you draw (stroke data), the questions you answer, guesses, and the wishes you write. These are shared with your partner in the room and with nobody else.</li>
 <li><strong>Usage events.</strong> A small set of product events (for example "round sent", "wish banked", "account deleted") with timestamps, tied to your anonymous account ID. They contain no message content and no personal details. We use them to see whether the app works and which parts people use.</li>
-<li><strong>Crash reports.</strong> If we add crash reporting, it will collect device model, OS version and the technical error, never message content. This policy will be updated before that happens.</li>
+<li><strong>Crash reports.</strong> The app includes crash reporting from Sentry (sentry.io), which acts as our service provider. When the app crashes it receives the technical error, your device model and Android version, and your anonymous account ID. Room codes are removed before anything is sent, and message content is never included.</li>
 </ul>
-<p>We do not collect your contacts, location, photos, files, advertising ID or device identifiers. The app requests no Android permissions.</p>
+<p>We do not collect your contacts, location, photos, files, advertising ID or device identifiers. The app never asks you to grant a permission. Android lists a few standard permissions that the app or its libraries declare automatically (internet access, network state, vibration and a biometric-check permission declared by a dependency); none of them is used to read your contacts, files or location.</p>
 
 <h2>Where data is stored</h2>
 <p>Data is stored on Supabase (supabase.com) servers in the Mumbai, India region, protected by row-level security so that only the two members of a room can read that room. Data travels over HTTPS only. Your session token is kept in your phone's encrypted storage.</p>
